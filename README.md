@@ -1,4 +1,4 @@
-# [BDreborn](https://telegram.me/BDreborn)
+# [X7_BOT](https://telegram.me/BOTHU)
 
 **An advanced and powerful administration bot based on NEW TG-CLI
 
@@ -9,30 +9,21 @@
 
 | Use help |
 |:--------|:------------|
-| [#!/]help | just send help in your group and get the commands |
+| الاوامر | just send help in your group and get the commands |
 
 **You can use "#", "!", or "/" to begin all commands
 
 * * *
 
-# Installation
+# التنصيب
 
-```sh
-# Let's install the bot.
-cd $HOME
-git clone https://github.com/BeyondTeam/BDReborn.git
-cd BDReborn
-chmod +x beyond.sh
-./beyond.sh install
-./beyond.sh # Enter a phone number & confirmation code.
-```
-### One command
-To install everything in one command, use:
-```sh
-cd $HOME && git clone https://github.com/BeyondTeam/BDReborn.git && cd BDReborn && chmod +x beyond.sh && ./beyond.sh install && ./beyond.sh
-```
-
-* * *
+git clone https://github.com/x7h/x7_bot.git
+cd x7_bot
+chmod +x x7_bot.sh
+./x7_bot.sh install
+./x7_bot.sh 
+ #عيد اخر كودين
+# Enter a phone number & confirmation code.
 
 ### Sudo And Bot
 After you run the bot for first time, send it `!id`. Get your ID and stop the bot.
@@ -51,31 +42,12 @@ Then restart the bot.
 
 # Support and development
 
-More information [Beyond Development](https://telegram.me/joinchat/AAAAAD9JFZlMveUl8q99gA)
+More information [X7_BOT CHANNEL](https://telegram.me/joinchat/BOTHU)
 
-# Special thanks to
-[@nero_dev](https://telegram.me/nero_dev)
-
-[@K_a_I_i_I_i_n_u_x](https://telegram.me/K_a_I_i_I_i_n_u_x)
-
-[@MrHalix](https://github.com/MrHalix)
-
-[@Vysheng](https://github.com/vysheng)
-
-* * *
 
 # Developers!
 
-[SoLiD](https://github.com/solid021) ([Telegram](https://telegram.me/SoLiD))
-
-[MAKAN](https://github.com/makanj) ([Telegram](https://telegram.me/MAKAN))
-
-[Ali](https://github.com/ali-ghoghnoos) ([Telegram](https://telegram.me/Exacute))
-
-[Rixel](https://github.com/Rixel) ([Telegram](https://telegram.me/Rixel))
-
-[Civey](https://github.com/Oysof) ([Telegram](https://telegram.me/Civey))
-
+[جوكر بغداد](https://github.com/X7H) ([Telegram](https://telegram.me/DEV_IRAQ1))
 ### Our Telegram channel:
 
-[@BeyondTeam](https://telegram.me/BeyondTeam)
+[@BOTHU](https://telegram.me/BOTHU)
