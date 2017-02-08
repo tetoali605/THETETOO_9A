@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd $HOME/BDReborn
+cd $HOME/x7_bot
 
 install() {
 	    cd tg
@@ -67,8 +67,8 @@ fi
 #  --permanent-peer-ids                 use permanent peer ids
 #			#			#			#			#			#			#			#			#			#
 #Example To launch with second profile :
-# ./beyond.sh -p second-profile
+# ./x7_bot.sh -p second-profile
 
 #			  OR
 
-# ./beyond.sh --profile second-profile
+# ./x7_bot.sh --profile second-profile
