@@ -42,6 +42,6 @@ local function run(msg, matches)
 end
 
 return { patterns = 
-	{ "^[/!#](معلوماتي)$" }, 
+	{ "^(معلوماتي)$" }, 
 	run = run
 	}
