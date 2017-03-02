@@ -1,149 +1,74 @@
 #!/usr/bin/env bash
-THIS_DIR=$(cd $(dirname $0); pwd)
-cd $THIS_DIR
 
-update() {
-  git pull
-  git submodule update --init --recursive
-  install_rocks
-}
-
-# Will install luarocks on THIS_DIR/.luarocks
-install_luarocks() {
-  git clone https://github.com/keplerproject/luarocks.git
-  cd luarocks
-  git checkout tags/v2.2.1 # Current stable
-
-  PREFIX="$THIS_DIR/.luarocks"
-
-  ./configure --prefix=$PREFIX --sysconfdir=$PREFIX/luarocks --force-config
-
-  RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
-  fi
-
-  make build && make install
-  RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting.";exit $RET;
-  fi
-
-  cd ..
-  rm -rf luarocks
-}
-
-install_rocks() {
-  ./.luarocks/bin/luarocks install luasocket
-  RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
-  fi
-
-  ./.luarocks/bin/luarocks install oauth
-  RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
-  fi
-
-  ./.luarocks/bin/luarocks install redis-lua
-  RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
-  fi
-
-  ./.luarocks/bin/luarocks install lua-cjson
-  RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
-  fi
-
-  ./.luarocks/bin/luarocks install fakeredis
-  RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
-  fi
-
-  ./.luarocks/bin/luarocks install luafilesystem
-  RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
-  fi
-
-  ./.luarocks/bin/luarocks install lub
-  RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
-  fi
-
-  ./.luarocks/bin/luarocks install luaexpat
-  RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
-  fi  
-  
-  ./.luarocks/bin/luarocks install xml
-  RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
-  fi
-
-  ./.luarocks/bin/luarocks install feedparser
-  RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
-  fi
-  
-  ./.luarocks/bin/luarocks install serpent
-  RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
-  fi
-  
-  ./.luarocks/bin/luarocks install lunitx
-  RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
-  fi
-  
-  ./.luarocks/bin/luarocks install set
-  RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
-  fi
-  
-  ./.luarocks/bin/luarocks install htmlparser
-  RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
-  fi
-}
+cd $HOME/THETETOO_A9A
 
 install() {
-  git pull
-  git submodule update --init --recursive
-  cd tg && ./configure && make
-  
-  RET=$?; if [ $RET -ne 0 ]; then
-    echo "Trying without Python...";
-    ./configure --disable-python && make
-    RET=$?
-  fi
-  
-  if [ $RET -ne 0 ]; then
-    echo "Error. Exiting."; exit $RET;
-  fi
-  cd ..
-  install_luarocks
-  install_rocks
+	    cd tg
+		sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+		sudo apt-get install g++-4.7 c++-4.7
+		sudo apt-get update		
+        sudo apt-get upgrade
+		sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev lua-socket lua-sec lua-expat libevent-dev make unzip git redis-server autoconf g++ libjansson-dev libpython-dev expat libexpat1-dev
+		sudo apt-get install lua-lgi
+		sudo apt-get install libnotify-dev
+		sudo apt-get install screen
+		sudo apt-get install tmux
+		wget https://valtman.name/files/telegram-cli-1222
+		mv telegram-cli-1222 tgcli
+		chmod +x tgcli
+		cd ..
+		chmod +x bot
+		chmod +x tg
 }
 
 if [ "$1" = "install" ]; then
   install
-elif [ "$1" = "update" ]; then
-  update
-else
-  if [ ! -f ./tg/telegram.h ]; then
+  else
+
+if [ ! -f ./tg/tgcli ]; then
     echo "tg not found"
     echo "Run $0 install"
     exit 1
-  fi
-  
-   chmod 777 launch.sh
-   
-  if [ ! -f ./tg/bin/telegram-cli ]; then
-    echo "tg binary not found"
-    echo "Run $0 install"
-    exit 1
-  fi
- 
- rm -r ~/.telegram-cli/state
- 
- echo "Anti CRASH server is : ON"
- 
-  ./tg/bin/telegram-cli -k ./tg/tg-server.pub -s ./VIPTEAM/VIPTEAM.lua -l 1 -E
 fi
+   echo -e "\033[38;5;208m"
+   echo -e "     > BeyondTeam Source :D                        "
+   echo -e "                                              \033[0;00m"
+   echo -e "\e[36m"
+   ./tg/tgcli -s ./bot/bot.lua $@
+fi
+
+# Now All Argument Support after ./beyond.sh !
+#	Arguments :
+#			#			#			#			#			#			#			#			#			#
+#  --phone/-u                           specify username (would not be asked during authorization)
+#  --verbosity/-v                       increase verbosity (0-ERROR 1-WARNIN 2-NOTICE 3+-DEBUG-levels)
+#  --enable-msg-id/-N                   message num mode
+#  --config/-c                          config file name
+#  --profile/-p                         use specified profile
+#  --wait-dialog-list/-W                send dialog_list query and wait for answer before reading input
+#  --disable-colors/-C                  disable color output
+#  --disable-readline/-R                disable readline
+#  --alert/-A                           enable bell notifications
+#  --daemonize/-d                       daemon mode
+#  --logname/-L <log-name>              log file name
+#  --username/-U <user-name>            change uid after start
+#  --groupname/-G <group-name>          change gid after start
+#  --disable-output/-D                  disable output
+#  --tcp-port/-P <port>                 port to listen for input commands
+#  --udp-socket/-S <socket-name>        unix socket to create
+#  --exec/-e <commands>                 make commands end exit
+#  --disable-names/-I                   use user and chat IDs in updates instead of names
+#  --help/-h                            prints this help
+#  --accept-any-tcp                     accepts tcp connections from any src (only loopback by default)
+#  --disable-link-preview               disables server-side previews to links
+#  --bot/-b                             bot mode
+#  --json                               prints answers and values in json format
+#  --permanent-msg-ids                  use permanent msg ids
+#  --permanent-peer-ids                 use permanent peer ids
+#			#			#			#			#			#			#			#			#			#
+#Example To launch with second profile :
+# ./THETETOO_A9A.sh -p second-profile
+
+#			  OR
+
+# ./THETETOO_A9A.sh --profile second-profile
