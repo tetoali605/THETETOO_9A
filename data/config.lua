@@ -2,18 +2,17 @@ do local _ = {
   admins = {},
   disabled_channels = {},
   enabled_plugins = {
-    "broadcast",
+        "broadcast",
     "lock_bot",
     "lock_join",
     "lock_tag",
     "lock_user",
     "banbot",
     "ar_help",
-    "adddsudo",
+    "addsudo",
     "addbots",
     "addreplay",
     "addtime",
-    "AR_ME",
     "admin",
     "all",
     "anjb",
@@ -23,10 +22,8 @@ do local _ = {
     "ar-supergruop",
     "banhammer",
     "gette",
-    "Kickall1",
     "l_l_lo",
     "leave_ban",
-    "lock_media",
     "msg_checks",
     "owners",
     "plugins",
@@ -38,14 +35,12 @@ do local _ = {
     "anti_spam",
     "badword",
     "repaly",
-    "delete",
     "ar_me",
     "aboasola",
     "dev",
-    "bot",
     "ax",
     "ingroup",
-    "echo.",
+    "echo",
     "lock-fwd",
     "lock_fwd",
     "kickm",
@@ -54,12 +49,12 @@ do local _ = {
     "addbot1",
     "kickme"
   },
-  info_text = "@no_no2",
+  info_text = "🔹مطورين البوت🔹 \n    @sdghhkk \n",
   moderation = {
     data = "./data/moderation.json"
   },
   sudo_users = {
-    246536126
+    246536126,
     250062838
   }
 }
